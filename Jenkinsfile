@@ -25,8 +25,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                mkdir -p $DEPLOY_DIR
-                cp target/SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar $DEPLOY_DIR/
+                cp target/SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar .
                 docker build -t $IMAGE_NAME:$IMAGE_TAG .
                 '''
             }
