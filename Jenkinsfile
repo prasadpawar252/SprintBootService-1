@@ -17,8 +17,6 @@ pipeline {
         stage('Build Maven') {
             steps {
                 sh '''
-                sudo export MAVEN_HOME=/mnt/build-tools/apache-maven-3.9.10
-                sudo export PATH=$MAVEN_HOME/bin:$PATH
                 sudo mvn clean package
                 '''
             }
