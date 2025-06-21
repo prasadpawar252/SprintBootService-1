@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/Shantanumajan6/SprintBootService-1.git'
+                git url: 'https://github.com/LegPro/SprintBootService-1.git'
             }
         }
 
