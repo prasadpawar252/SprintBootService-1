@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'slave' }
 
     environment {
         IMAGE_NAME = "legpro/spring"
