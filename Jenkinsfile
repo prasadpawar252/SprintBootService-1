@@ -26,6 +26,8 @@ pipeline {
             steps {
                 sh '''
                 cp target/SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar .
+                ls -l  # Debug: verify jar and Dockerfile presence
+                cat Dockerfile  # Debug: make sure it's here
                 docker build -t $IMAGE_NAME:$IMAGE_TAG .
                 '''
             }
