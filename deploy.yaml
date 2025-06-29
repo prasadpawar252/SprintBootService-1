@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: vel-1
-          image: legpro/spring:1.0
+          image: prasadpawar2522/spring:1.0
           ports:
             - containerPort: 8080
 ---
