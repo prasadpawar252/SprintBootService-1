@@ -2,23 +2,24 @@ pipeline {
     agent { label 'slave' }
 
     environment {
-        IMAGE_NAME = "legpro/spring"
+        IMAGE_NAME = "prasadpawar2522/spring"
         IMAGE_TAG = "1.0"
         DEPLOY_DIR = "deploy"
+        MAVEN_HOME = "/home/ec2-user/build-tools/apache-maven-3.9.10"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/LegPro/SprintBootService-1.git'
+                git url: 'https://github.com/prasadpawar252/SprintBootService-1.git'
             }
         }
 
         stage('Build Maven') {
             steps {
-                sh '''
-                mvn clean package
-                '''
+                withEnv(["PATH=${MAVEN_HOME}/bin:$PATH"]) {
+                    sh 'mvn clean package'
+                }
             }
         }
 
